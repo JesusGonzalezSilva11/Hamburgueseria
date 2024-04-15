@@ -15,6 +15,8 @@ import androidx.navigation.compose.composable
 import com.example.hamburgueseria.ui.theme.HamburgueseriaTheme
 import androidx.navigation.compose.rememberNavController
 import com.example.hamburgueseria.ui.Principal
+import com.example.hamburgueseria.ui.Total
+import com.example.hamburgueseria.ui.VerIngredientes
 import com.example.hamburgueseria.ui.ViewModel
 
 class MainActivity : ComponentActivity() {
@@ -46,8 +48,10 @@ fun Principal(navController: NavHostController = rememberNavController()) {
             Principal(
                 viewModel = viewModel,
                 uiState = uiState,
-                onClickCambiarPantalla = { navController.navigate("Total") })
+                ventanaTotal = { navController.navigate("Total") },
+                ventanaIngredientes = { navController.navigate("VerIngredientes") })
         }
+
     }
 
 }

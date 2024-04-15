@@ -1,5 +1,6 @@
 package com.example.hamburgueseria.data
 
 data class UiState (
-    val precio: Int = 1,
+    val carrito:ArrayList<Producto>? = null,
+    val total: Int = 0
 )
