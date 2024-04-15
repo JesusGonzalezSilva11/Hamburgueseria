@@ -33,7 +33,7 @@ fun listaProductos(
     ventanaIngredientes: () -> Unit
 ){
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2), // columns = GridCells.Adaptive(minSize = x.dp)...
+        columns = GridCells.Fixed(2),
         modifier = Modifier
     ) {
         items(productos) { producto ->

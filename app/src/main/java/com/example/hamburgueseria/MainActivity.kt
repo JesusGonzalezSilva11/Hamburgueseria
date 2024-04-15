@@ -14,6 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hamburgueseria.ui.theme.HamburgueseriaTheme
 import androidx.navigation.compose.rememberNavController
+import com.example.hamburgueseria.data.Ingrediente
+import com.example.hamburgueseria.data.Producto
 import com.example.hamburgueseria.ui.Principal
 import com.example.hamburgueseria.ui.Total
 import com.example.hamburgueseria.ui.VerIngredientes
@@ -44,6 +46,14 @@ fun Principal(navController: NavHostController = rememberNavController()) {
         navController = navController,
         startDestination = "Principal",
     ) {
+        composable(route = "Total") {
+            Total()
+        }
+        composable(route = "VerIngredientes") {
+            VerIngredientes(
+                producto = Producto("hamburguesa", 7, arrayListOf(Ingrediente("carne"), Ingrediente("pan"), Ingrediente("lechuga"), Ingrediente("tomate"))),
+                onClickCambiarPantalla = { navController.navigate("Principal") })
+        }
         composable(route = "Principal") {
             Principal(
                 viewModel = viewModel,

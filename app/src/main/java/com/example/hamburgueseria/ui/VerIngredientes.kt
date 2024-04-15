@@ -12,13 +12,15 @@ fun VerIngredientes (
     producto: Producto,
     onClickCambiarPantalla: () -> Unit
 ){
-    Text(text = "${producto.nombre}, ingredientes:")
-    LazyColumn() {
-        items(producto.ingredientes){ ingrediente->
-            Text(text = ingrediente.nombre)
+    Column {
+        Text(text = "${producto.nombre}, ingredientes:")
+        LazyColumn() {
+            items(producto.ingredientes){ ingrediente->
+                Text(text = ingrediente.nombre)
+            }
         }
-    }
-    Button(onClick =  onClickCambiarPantalla ) {
-        Text(text = "Volver")
+        Button(onClick =  onClickCambiarPantalla ) {
+            Text(text = "Volver")
+        }
     }
 }

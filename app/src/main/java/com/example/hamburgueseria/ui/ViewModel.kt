@@ -16,4 +16,7 @@ class ViewModel {
     ){
 
     }
+    fun productoActualizar(ventanaIngredientes: () -> Unit, actual:Producto){
+        uiState.productoActual(actual)
+    }
 }
